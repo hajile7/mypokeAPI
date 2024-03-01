@@ -1,0 +1,58 @@
+﻿@model PokemonModel
+<div class="container-fluid">
+    @{
+        if (@Model != null) {
+            <div class="row">
+                <div class="card bg-light col-4 p-0">
+                    <div class="card-header text-center">
+                        <b>@System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(@Model.name.ToLower())</b>
+                    </div>
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <img style="width:10em;height:10em;" class="col-3" src="@Model.sprites.front_default" />
+                            <img style="width:10em;height:10em;" class="col-3" src="@Model.sprites.front_shiny" />
+                            <br />
+                            <p class="col-4">Normal / Shiny</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                <h3><u>Type(s)</u></h3>
+                <ul style="padding-left:8px">
+                @for(int i = 0; i < Model.types.Length; i++)
+                {
+                        <li>@System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(@Model.types[i].type.name.ToLower())</li>
+                }
+                </ul>
+                </div>
+                <div class="col-3">
+                    <h3><u>Abilities</u></h3>
+                    <ul style="padding-left:8px">
+                    @for (int i = 0; i < Model.abilities.Length; i++)
+                    {
+                        <li>@System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(@Model.abilities[i].ability.name.ToLower())</li>
+                    }
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card bg-dark  col-4 p-0">
+                    <div class="card-header text-center">
+                        <p style="color:white">Showdown Model</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <img style="width:10em;height:10em;" class="col-3" src="@Model.sprites.other.showdown.front_default" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <p>Something went wrong. /:</p>
+        }
+    }
+</div>
