@@ -13,6 +13,7 @@ namespace PokeAPI.Controllers
         {
             _logger = logger;
         }
+
         public IActionResult Index()
         {
             return View();
@@ -22,6 +23,32 @@ namespace PokeAPI.Controllers
         {
             return View();
         }
+        public IActionResult TypeRelations(List<string> types)
+        {
+            List<TypeRelationsModel> result = new List<TypeRelationsModel>();
+            foreach (string t in types)
+            {
+                result.Add(TypeRelationsDAL.GetTypeInfo(t));
+            }
+            if (result == null)
+            {
+                RedirectToAction("Index");
+            }
+            return View(result);
+        }
+        public IActionResult Ability(List<string> abilities)
+        {
+            List<AbilityInfoModel> result = new List<AbilityInfoModel>();
+            foreach (string a in abilities)
+            {
+                result.Add(AbilityInfoDAL.GetAbilityInfo(a));
+            }
+            if (result == null)
+            {
+                RedirectToAction("Index");
+            }
+            return View(result);
+        }
         public IActionResult Result(string pokemon)
         {
             PokemonModel result = PokemonDAL.GetPokemon(pokemon);
@@ -29,8 +56,20 @@ namespace PokeAPI.Controllers
             {
                 RedirectToAction("Index");
             }
+            
             return View(result);
         }
+        public IActionResult PreviousSprites(string sprites)
+        {
+            PokemonModel result = PokemonDAL.GetPokemon(sprites);
+            if (result == null)
+            {
+                RedirectToAction("Index");
+            }
+
+            return View(result);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

@@ -1,8 +1,17 @@
-﻿<h1 style="font-size:20px">Enter pokemon:</h1>
-<form asp-action="Result" asp-method="Post" asp-controller="Home">
-    <input type="text" name="pokemon" id="pokemon" placeholder="Pokemon"/>
-
-    <br />
-    <br/>
-    <button type="button" class="btn btn-secondary">Submit</button>
-</form>
+﻿<div class="container1" style="color: floralwhite; overflow: hidden;">
+    <form id="searchForm" asp-action="Result" asp-method="Post" asp-controller="Home">
+        <br />
+        <br />
+        <input type="text" style="width: 20em; height: 2em; font-family: Courier New, Courier, monospace" name="pokemon" id="pokemon" placeholder="Enter Pokemon" onkeydown="handleEnter(event)" />
+        <br />
+        <br />
+    </form>
+<script>
+    function handleEnter(event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); 
+            document.getElementById("searchForm").submit(); // Manually submit the form
+        }
+    }
+</script>
+</div>

@@ -1,23 +1,49 @@
 ﻿@model PokemonModel
-<div class="container-fluid">
+<div class="container-fluid offset-3">
     @{
         if (@Model != null) {
-            <div class="row">
-                <div class="card bg-light col-4 p-0">
-                    <div class="card-header text-center">
+            <div class="row" style="color:floralwhite">
+                <div class="card bg-dark col-4 p-0">
+                    <div class="card-header text-center" style="background-color:maroon">
                         <b>@System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(@Model.name.ToLower())</b>
                     </div>
                     <div class="card-body">
                         <div class="row d-flex align-items-center justify-content-center">
-                            <img style="width:10em;height:10em;" class="col-3" src="@Model.sprites.front_default" />
-                            <img style="width:10em;height:10em;" class="col-3" src="@Model.sprites.front_shiny" />
+                            <img style="max-width: 100%;max-height: 100%; width: 10em; height: 10em" class="col-3" src="@Model.sprites.front_default" />
+                            <img style="max-width: 100%;max-height: 100%; width: 10em; height: 10em" class="col-3" src="@Model.sprites.front_shiny" />
                             <br />
                             <p class="col-4">Normal / Shiny</p>
                         </div>
                     </div>
                 </div>
+                <div class="col-2">
+                    <audio id="PkmnCry" src="@Model.Cries.latest" preload="auto"></audio>
+                    <button onclick="document.getElementById('PkmnCry').play();">Hear Cry (newest gen)</button>
+                    <br/>
+                    <br/>
+                    <form asp-controller="Home" asp-action="Ability">
+                        @for (int i = 0; i < Model.abilities.Length; i++)
+                        {
+                            <input type="hidden" name="abilities" value="@Model.abilities[i].ability.name" />
+                        }
+                        <button type="submit">Ability Information</button>
+                    </form>
+                    <br/>
+                    <form asp-controller ="Home" asp-action="TypeRelations">
+                        @for (int i = 0; i < Model.types.Length; i++) {
+                        <input type="hidden" name="types" value="@Model.types[i].type.name" />
+                        }
+                        <button type="submit">Type Information</button>
+                    </form>
+                    <br/>
+                    <form asp-controller="Home" asp-action="PreviousSprites">
+                        <input type="hidden" name="sprites" value="@Model.name"/>
+                        <button type="submit">Previous Sprites</button>
+                    </form>
+                </div>
             </div>
-            <div class="row">
+            <br/>
+            <div class="row" style="color: floralwhite">
                 <div class="col-3">
                 <h3><u>Type(s)</u></h3>
                 <ul style="padding-left:8px">
@@ -37,14 +63,14 @@
                     </ul>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="color:floralwhite">
                 <div class="card bg-dark  col-4 p-0">
-                    <div class="card-header text-center">
-                        <p style="color:white">Showdown Model</p>
+                    <div class="card-header text-center" style="background-color:maroon">
+                        <p>Showdown Model</p>
                     </div>
                     <div class="card-body">
                         <div class="row d-flex align-items-center justify-content-center">
-                            <img style="width:10em;height:10em;" class="col-3" src="@Model.sprites.other.showdown.front_default" />
+                            <img style="max-width: 100%;max-height: 100%; width: 10em; height: 10em" class="col-3" src="@Model.sprites.other.showdown.front_default" />
                         </div>
                     </div>
                 </div>
@@ -52,7 +78,7 @@
         }
         else
         {
-            <p>Something went wrong. /:</p>
+            <p style="color: floralwhite">Something went wrong :-( <br /> <br />Click home or MyPokeAPI in the upper left to try again.</p>
         }
     }
 </div>

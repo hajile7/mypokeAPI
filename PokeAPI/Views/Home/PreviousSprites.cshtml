@@ -1,0 +1,123 @@
+﻿@model PokemonModel
+<div class="container1">
+<div class="row col-3" style="color:floralwhite">
+<div id="sprites" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#sprites" data-bs-slide-to="0" aria-label="Slide 1" class="active"></button>
+            <button type="button" data-bs-target="#sprites" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#sprites" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#sprites" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#sprites" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#sprites" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#sprites" data-bs-slide-to="6" aria-label="Slide 7"></button>
+            <button type="button" data-bs-target="#sprites" data-bs-slide-to="7" aria-label="Slide 8"></button>
+        </div>
+        <div class="carousel-inner text-center">
+            <div class="carousel-item active">
+                <h2><u>Version 1</u></h2>
+                <br />
+                @if (@Model.sprites.versions.generationi.yellow.front_default == null)
+                {
+                    <p>Did not exist in this version</p>
+                }
+                else
+                {
+                    <img class="d-block w-100" style="max-width: 100%; max-height: 100%" src="@Model.sprites.versions.generationi.yellow.front_default" alt="First slide">
+                }
+            </div>
+            <div class="carousel-item">
+                <h2><u>Version 2</u></h2>
+                <br />
+                @if (@Model.sprites.versions.generationii.crystal.front_default == null)
+                {
+                    <p>Did not exist in this version</p>
+                }
+                else
+                {
+                    <img class="d-block w-100" style="max-width: 100%; max-height: 100%" src="@Model.sprites.versions.generationii.crystal.front_default" alt="Second slide">
+                }
+            </div>
+            <div class="carousel-item">
+                <h2><u>Version 3</u></h2>
+                <br />
+                @if (@Model.sprites.versions.generationiii.emerald.front_default == null)
+                {
+                    <p>Did not exist in this version</p>
+                }
+                else
+                {
+                    <img class="d-block w-100" style="max-width: 100%; max-height: 100%" src="@Model.sprites.versions.generationiii.emerald.front_default" alt="Third slide">
+                }
+            </div>
+            <div class="carousel-item">
+                <h2><u>Version 4</u></h2>
+                <br />
+                @if (@Model.sprites.versions.generationiv.platinum.front_default == null)
+                {
+                    <p>Did not exist in this version</p>
+                }
+                else
+                {
+                    <img class="d-block w-100" style="max-width: 100%; max-height: 100%" src="@Model.sprites.versions.generationiv.platinum.front_default" alt="Fourth slide">
+                }
+            </div>
+            <div class="carousel-item">
+                <h2><u>Version 5</u></h2>
+                <br />
+                @if (@Model.sprites.versions.generationv.blackwhite.front_default == null)
+                {
+                    <p>Did not exist in this version</p>
+                }
+                else
+                {
+                    <img class="d-block w-100" style="max-width: 100%; max-height: 100%" src="@Model.sprites.versions.generationv.blackwhite.front_default" alt="Fifth slide">
+                }
+            </div>
+            <div class="carousel-item">
+                <h2><u>Version 6</u></h2>
+                <br />
+                @if (@Model.sprites.versions.generationvi.omegarubyalphasapphire.front_default == null)
+                {
+                    <p>Did not exist in this version</p>
+                }
+                else
+                {
+                    <img class="d-block w-100" style="max-width: 100%; max-height: 100%" src="@Model.sprites.versions.generationvi.omegarubyalphasapphire.front_default" alt="Sixth slide">
+                }
+            </div>
+            <div class="carousel-item">
+                <h2><u>Version 7</u></h2>
+                <br />
+                @if (@Model.sprites.versions.generationvii.ultrasunultramoon.front_default == null)
+                {
+                    <p>Did not exist in this version</p>
+                }
+                else
+                {
+                    <img class="d-block w-100" style="max-width: 100%; max-height: 100%" src="@Model.sprites.versions.generationvii.ultrasunultramoon.front_default" alt="Seventh slide">
+                }
+            </div>
+            <div class="carousel-item">
+                <h2><u>Version 8</u></h2>
+                <br />
+                @if (@Model.sprites.versions.generationviii.icons.front_default == null)
+                {
+                    <p>Did not exist in this version</p>
+                }
+                else
+                {
+                    <img class="d-block w-100" style="max-width: 100%; max-height: 100%; margin: 0 0 25% 0" src="@Model.sprites.versions.generationviii.icons.front_default" alt="Eighth slide">
+                }
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" data-bs-target="#sprites" type="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" data-bs-target="#sprites" type="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+</div>

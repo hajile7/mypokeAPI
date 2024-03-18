@@ -23,9 +23,14 @@ namespace PokeAPI.Models
         public Stat[] stats { get; set; }
         public Type[] types { get; set; }
         public int weight { get; set; }
+        public Cries Cries {  get; set; }
     }
-    //I don't really use the vars below here quite yet.
-    //Sprites class holds all its dependent classes (quite a few)
+
+    public class Cries
+    {
+        public string latest { get; set; }
+        public string legacy { get; set; }
+    }
     public class Species
     {
         public string name { get; set; }

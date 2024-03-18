@@ -1,0 +1,23 @@
+﻿@model List<AbilityInfoModel>
+
+@{
+    foreach(AbilityInfoModel ability in Model)
+    {
+        <div class="card bg-dark p-0 col 4" style="color: floralwhite">
+            <div class="card-header text-center" style="background-color:maroon">
+            <b style="text-align: center">@System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(@ability.name.ToLower())</b>
+            </div>
+            <div class="card-body">
+                <p>Version introduced: @ability.generation.name</p>
+                @for(int i = 0; i < ability.effect_entries.Length; i++)
+                {
+                    if (ability.effect_entries[i].language.name == "en")
+                    {
+                        <p>@ability.effect_entries[i].effect </p>
+                    }
+                }
+            </div>
+        </div>
+        <br/>
+    }
+}

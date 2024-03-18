@@ -1,0 +1,63 @@
+﻿@model List<TypeRelationsModel>
+
+@{
+    foreach(TypeRelationsModel type in Model)
+    {
+        <div class="row col-12" style="color: floralwhite">
+            <b style="text-align: center">@System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(@type.name.ToLower())</b>
+            <div class="card bg-dark p-0 col 3">
+                <div class="card-header text-center" style="background-color:maroon">
+                    2x from
+                </div>
+                <div class="card-body">
+                    <ul>
+                    @for (int i = 0; i < type.damage_relations.double_damage_from.Length; i++)
+                    {
+                        <li>@type.damage_relations.double_damage_from[i].name</li>
+                    }
+                    </ul>
+                </div>
+            </div>
+            <div class="card bg-dark p-0 col 3">
+                <div class="card-header text-center" style="background-color:maroon">
+                    2x to
+                </div>
+                <div class="card-body">
+                    <ul>
+                        @for (int i = 0; i < type.damage_relations.double_damage_to.Length; i++)
+                        {
+                            <li>@type.damage_relations.double_damage_to[i].name</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="card bg-dark p-0 col 3">
+                <div class="card-header text-center" style="background-color:maroon">
+                    0.5x from
+                </div>
+                <div class="card-body">
+                    <ul>
+                        @for (int i = 0; i < type.damage_relations.half_damage_from.Length; i++)
+                                {
+                            <li>@type.damage_relations.half_damage_from[i].name</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="card bg-dark p-0 col 3">
+                <div class="card-header text-center" style="background-color:maroon">
+                    0.5x to
+                </div>
+                <div class="card-body">
+                    <ul>
+                        @for (int i = 0; i < type.damage_relations.half_damage_to.Length; i++)
+                        {
+                            <li>@type.damage_relations.half_damage_to[i].name</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br/>
+    }
+}

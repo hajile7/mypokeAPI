@@ -31,3 +31,4 @@ C:\Users\elire\source\repos\My stuff\PokeAPI\PokeAPI\obj\Debug\net8.0\refint\Pok
 C:\Users\elire\source\repos\My stuff\PokeAPI\PokeAPI\obj\Debug\net8.0\PokeAPI.pdb
 C:\Users\elire\source\repos\My stuff\PokeAPI\PokeAPI\obj\Debug\net8.0\PokeAPI.genruntimeconfig.cache
 C:\Users\elire\source\repos\My stuff\PokeAPI\PokeAPI\obj\Debug\net8.0\ref\PokeAPI.dll
+C:\Users\elire\source\repos\My stuff\PokeAPI\PokeAPI\obj\Debug\net8.0\PokeAPI.sourcelink.json

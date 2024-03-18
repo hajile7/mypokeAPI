@@ -1,4 +1,6 @@
-﻿namespace PokeAPI.Models
+﻿using Newtonsoft.Json;
+
+namespace PokeAPI.Models
 {
     public class Sprites
     {
@@ -54,18 +56,27 @@
     }
     public class Versions
     {
+        [JsonProperty("generation-i")]
         public GenerationI generationi { get; set; }
+        [JsonProperty("generation-ii")]
         public GenerationIi generationii { get; set; }
+        [JsonProperty("generation-iii")]
         public GenerationIii generationiii { get; set; }
+        [JsonProperty("generation-iv")]
         public GenerationIv generationiv { get; set; }
+        [JsonProperty("generation-v")]
         public GenerationV generationv { get; set; }
+        [JsonProperty("generation-vi")]
         public GenerationVi generationvi { get; set; }
+        [JsonProperty("generation-vii")]
         public GenerationVii generationvii { get; set; }
+        [JsonProperty("generation-viii")]
         public GenerationViii generationviii { get; set; }
     }
 
     public class GenerationI
     {
+        [JsonProperty("red-blue")]
         public RedBlue redblue { get; set; }
         public Yellow yellow { get; set; }
     }
@@ -130,7 +141,9 @@
     public class GenerationIii
     {
         public Emerald emerald { get; set; }
+        [JsonProperty("firered-leafgreen")]
         public FireredLeafgreen fireredleafgreen { get; set; }
+        [JsonProperty("ruby-sapphire")]
         public RubySapphire rubysapphire { get; set; }
     }
 
@@ -158,7 +171,9 @@
 
     public class GenerationIv
     {
+        [JsonProperty("diamond-pearl")]
         public DiamondPearl diamondpearl { get; set; }
+        [JsonProperty("heartgold-sousilver")]
         public HeartgoldSoulsilver heartgoldsoulsilver { get; set; }
         public Platinum platinum { get; set; }
     }
@@ -201,6 +216,7 @@
 
     public class GenerationV
     {
+        [JsonProperty("black-white")]
         public BlackWhite blackwhite { get; set; }
     }
 
@@ -231,6 +247,7 @@
 
     public class GenerationVi
     {
+        [JsonProperty("omegaruby-alphasapphire")]
         public OmegarubyAlphasapphire omegarubyalphasapphire { get; set; }
         public XY xy { get; set; }
     }
@@ -254,6 +271,7 @@
     public class GenerationVii
     {
         public Icons icons { get; set; }
+        [JsonProperty("ultra-sun-ultra-moon")]
         public UltraSunUltraMoon ultrasunultramoon { get; set; }
     }
 
